@@ -1,0 +1,18 @@
+          document.getElementById("comentarioForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita recargar la página
+
+            let formData = new FormData(this);
+
+            fetch(this.action, {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data); // Mensaje desde el PHP
+                    this.reset(); // ✅ Vacía todos los campos del formulario
+                })
+                .catch(error => {
+                    alert("❌ Error sending: " + error);
+                });
+        });
