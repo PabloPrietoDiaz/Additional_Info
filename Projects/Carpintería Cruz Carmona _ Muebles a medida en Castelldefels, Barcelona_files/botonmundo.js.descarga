@@ -1,7 +1,0 @@
-const langDropdown = document.getElementById('langDropdown');
-const dropdownMenu = langDropdown.nextElementSibling; // el div .dropdown-menu
-
-langDropdown.addEventListener('click', function(e) {
-    e.preventDefault(); // evita comportamiento por defecto
-    dropdownMenu.classList.toggle('show'); // abre/cierra el menú
-});
